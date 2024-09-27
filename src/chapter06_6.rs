@@ -70,7 +70,7 @@ enum Message3 {
 }
 #[test]
 fn test4() {
-    let msgs: [Message3, 3] = [
+    let msgs = [
         Message3::Quit,
         Message3::Move{x:1, y:3},
         Message3::ChangeColor(255,255,0)

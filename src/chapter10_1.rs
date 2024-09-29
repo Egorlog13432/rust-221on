@@ -84,15 +84,15 @@ fn test5() {
     println!("{}, {}", x.value(), y.value());
 }
 
-struct Point<T, U> {
+struct Point6<T, U> {
     x: T,
     y: U,
 }
 
-impl<T, U> Point<T, U> {
+impl<T, U> Point6<T, U> {
     // Implement mixup to make it work, DON'T modify other code.
-    fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
-        Point{
+    fn mixup<V, W>(self, other: Point6<V, W>) -> Point6<T, W> {
+        Point6{
             x: self.x,
             y: other.y,
         }
@@ -100,8 +100,8 @@ impl<T, U> Point<T, U> {
 }
 #[test]
 fn test6() {
-    let p1 = Point { x: 5, y: 10 };
-    let p2 = Point { x: "Hello", y: '中'};
+    let p1 = Point6 { x: 5, y: 10 };
+    let p2 = Point6 { x: "Hello", y: '中'};
 
     let p3 = p1.mixup(p2);
 
@@ -112,18 +112,18 @@ fn test6() {
 }
 
 // Fix the errors to make the code work.
-struct Point<T> {
+struct Point7<T> {
     x: T,
     y: T,
 }
 
-impl Point<f32> {
+impl Point7<f32> {
     fn distance_from_origin(&self) -> f32 {
         (self.x.powi(2) + self.y.powi(2)).sqrt()
     }
 }
 #[test]
 fn test7() {
-    let p: Point<f32> = Point{x: 5.0, y: 10.0};
+    let p: Point7<f32> = Point7{x: 5.0, y: 10.0};
     println!("{}",p.distance_from_origin());
 }

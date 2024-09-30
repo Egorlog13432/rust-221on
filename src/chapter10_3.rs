@@ -339,6 +339,7 @@ fn example2() {
             }
         }
 
+
         fn value(&mut self, arg: u32) -> u32 {
             match self.value {
                 Some(v) => v,

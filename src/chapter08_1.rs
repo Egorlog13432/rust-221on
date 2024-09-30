@@ -84,6 +84,10 @@ fn test4() {
     println!("Success!");
 }
 
+enum MyEnum {
+    Foo,
+    Bar
+}
 #[test]
 fn test5() {
     let mut count = 0;
@@ -111,11 +115,14 @@ fn test6() {
     }
 }
 
+enum Foo1 {
+    Bar(u8)
+}
 #[test]
 fn test7() {
-    let a = Foo::Bar(1);
+    let a = Foo1::Bar(1);
 
-    if let Foo::Bar(i) = a {
+    if let Foo1::Bar(i) = a {
         println!("foobar holds the value: {}", i);
 
         println!("Success!");

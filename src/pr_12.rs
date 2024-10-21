@@ -30,13 +30,10 @@ fn print_vector(data: &[i32]) {
 }
 
 fn main() {
-    // Генеруємо випадковий вектор
     let random_vector = gen_random_vector(20);
 
-    // Виводимо вектор
     print_vector(&random_vector);
 
-    // Знаходимо мінімальну пару
     if let Some((a, b)) = min_adjacent_sum(&random_vector) {
         println!("Мінімальна пара сусідніх значень: ({}, {})", a, b);
     } else {

@@ -29,7 +29,7 @@ fn gen_shipments(n: usize) -> Vec<u32> {
 
     shipments
 }
-
+#[test]
 fn main() {
     let shipments1 = vec![8, 2, 2, 4, 4];
     let answer1 = count_permutation(&shipments1);
